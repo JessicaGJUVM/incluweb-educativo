@@ -14,11 +14,33 @@
             line-height: 1.6;
         }
 
+        /* HEADER CON IMAGEN DE FONDO */
         header {
-            background-color: #ffffff;
+            background-image: url("fondo-header.jpg");
+            background-size: cover;
+            background-position: center;
+            position: relative;
             text-align: center;
-            padding: 25px 15px;
-            border-bottom: 4px solid #ff7a00;
+            padding: 60px 20px;
+            color: #ffffff;
+        }
+
+        /* CAPA OSCURA PARA MEJORAR LEGIBILIDAD */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
+
+        header img,
+        header p {
+            position: relative;
+            z-index: 2;
         }
 
         header img {
@@ -28,8 +50,8 @@
         }
 
         header p {
-            margin-top: 10px;
-            font-size: 16px;
+            margin-top: 15px;
+            font-size: 18px;
         }
 
         section {
@@ -102,9 +124,8 @@
 <section>
     <h2>¿Qué es Conecta Talento?</h2>
 
-    <p><strong>Conecta Talento ofrece una solución innovadora </strong></p>
+    <p><strong>Conecta Talento ofrece una solución innovadora al:</strong></p>
 
-    <!-- MENÚ DE PESTAÑAS -->
     <div class="tabs">
         <div class="tab-buttons">
             <button class="active" onclick="mostrarTab(event, 'tab1')">
@@ -163,4 +184,6 @@ function mostrarTab(event, tabId) {
 
 </body>
 </html>
+
+
 
