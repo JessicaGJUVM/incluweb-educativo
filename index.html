@@ -2,53 +2,70 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>IncluWeb Educativo</title>
+    <title>IncluWEB Educativo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #f2f2f2;
             color: #000;
+            line-height: 1.6;
         }
+
         header {
-            background: #003366;
-            color: #fff;
-            padding: 20px;
+            background-color: #ffffff;
             text-align: center;
+            padding: 25px 15px;
+            border-bottom: 4px solid #ff7a00;
         }
-        nav {
-            background: #005599;
-            padding: 10px;
-            text-align: center;
+
+        header img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
         }
-        nav a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:focus {
-            outline: 3px solid yellow;
-        }
+
         section {
-            padding: 20px;
-            background: #fff;
-            margin: 10px;
-            border-radius: 5px;
+            background: #ffffff;
+            margin: 25px;
+            padding: 25px;
+            border-radius: 8px;
         }
+
+        h2 {
+            color: #8b0000;
+        }
+
+        ul {
+            font-size: 18px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        .imagenes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .imagenes img {
+            width: 300px;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
         footer {
-            background: #003366;
-            color: #fff;
+            background-color: #8b0000;
+            color: #ffffff;
             text-align: center;
-            padding: 10px;
-        }
-        button {
-            padding: 10px;
-            margin-top: 10px;
-            font-size: 16px;
+            padding: 15px;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -56,64 +73,25 @@
 <body>
 
 <header>
-    <h1>IncluWeb Educativo</h1>
-    <p>Accesibilidad digital basada en la metodología POUR</p>
+    <img src="logo-incluweb.png" alt="Logo de IncluWEB Educativo">
+    <p>Accesibilidad, inclusión y oportunidades digitales</p>
 </header>
 
-<nav>
-    <a href="#descripcion">Descripción</a>
-    <a href="#accesibilidad">Accesibilidad</a>
-    <a href="#pour">Metodología POUR</a>
-    <a href="#conclusion">Conclusión</a>
-</nav>
+<section>
+    <h2>¿Qué es Conecta Talento?</h2>
 
-<section id="descripcion">
-    <h2>Descripción del sitio</h2>
-    <p>
-        IncluWeb Educativo es un sitio diseñado bajo los principios de accesibilidad de la metodología POUR.
-        Su objetivo es ofrecer recursos educativos digitales accesibles para todas las personas,
-        incluyendo usuarios con discapacidad visual, auditiva, motriz y cognitiva.
-    </p>
-</section>
+    <p><strong>Conecta Talento ofrece una solución innovadora al:</strong></p>
 
-<section id="accesibilidad">
-    <h2>Accesibilidad general</h2>
     <ul>
-        <li>Enlaces visibles y funcionales</li>
-        <li>Navegación mediante teclado</li>
-        <li>Contraste adecuado entre texto y fondo</li>
-        <li>Contenido compatible con lectores de pantalla</li>
+        <li>Capacitar a personas en situación de vulnerabilidad en habilidades técnicas y digitales demandadas por el mercado.</li>
+        <li>Vincularlas directamente con empresas que requieren talento.</li>
+        <li>Acompañar el proceso de inserción laboral con mentoría y seguimiento.</li>
     </ul>
-</section>
 
-<section id="pour">
-    <h2>Metodología POUR</h2>
-
-    <h3>Perceptible</h3>
-    <p>Uso de texto alternativo, subtítulos y alto contraste.</p>
-
-    <h3>Operable</h3>
-    <p>Navegación completa mediante teclado y botones accesibles.</p>
-
-    <h3>Comprensible</h3>
-    <p>Lenguaje claro, estructura consistente y mensajes explicativos.</p>
-
-    <h3>Robusto</h3>
-    <p>Compatible con distintos navegadores y tecnologías de apoyo.</p>
-</section>
-
-<section id="conclusion">
-    <h2>Conclusión</h2>
-    <p>
-        La maqueta de IncluWeb Educativo demuestra una implementación efectiva
-        de la metodología POUR, promoviendo inclusión, accesibilidad y equidad
-        en el acceso a la información educativa.
-    </p>
-</section>
-
-<footer>
-    <p>Materia: Diseñar para compartir | UVM</p>
-</footer>
-
-</body>
-</html>
+    <div class="imagenes">
+        <img src="https://images.unsplash.com/featured/?computer"
+             alt="Persona aprendiendo habilidades digitales frente a una computadora">
+        <img src="https://images.unsplash.com/featured/?laptop"
+             alt="Uso de laptop para capacitación tecnológica">
+        <img src="https://images.unsplash.com/featured/?technology"
+             alt="Tecno
