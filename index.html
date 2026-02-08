@@ -43,53 +43,43 @@
             color: #8b0000;
         }
 
-        .botones {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
+        /* PESTAÑAS */
+        .tabs {
             margin-top: 25px;
         }
 
-        .botones button {
-            padding: 15px 25px;
+        .tab-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #ff7a00;
+        }
+
+        .tab-buttons button {
+            background-color: #f5f5f5;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
             font-size: 16px;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            margin-right: 5px;
+        }
+
+        .tab-buttons button.active {
             background-color: #ff7a00;
             color: #ffffff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
+            font-weight: bold;
         }
 
-        .botones button:hover {
-            background-color: #e66a00;
-        }
-
-        /* MODALES */
-        .modal {
+        .tab-content {
             display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.6);
+            padding: 20px;
+            border: 1px solid #ff7a00;
+            border-top: none;
         }
 
-        .modal-contenido {
-            background-color: #ffffff;
-            margin: 10% auto;
-            padding: 25px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 500px;
-        }
-
-        .cerrar {
-            float: right;
-            font-size: 24px;
-            cursor: pointer;
+        .tab-content.active {
+            display: block;
         }
 
         footer {
@@ -114,64 +104,60 @@
 
     <p><strong>Conecta Talento ofrece una solución innovadora al:</strong></p>
 
-    <!-- BOTONES -->
-    <div class="botones">
-        <button onclick="abrirModal('modal1')">Capacitación digital</button>
-        <button onclick="abrirModal('modal2')">Vinculación laboral</button>
-        <button onclick="abrirModal('modal3')">Mentoría y seguimiento</button>
+    <!-- MENÚ DE PESTAÑAS -->
+    <div class="tabs">
+        <div class="tab-buttons">
+            <button class="active" onclick="mostrarTab(event, 'tab1')">
+                Capacitación digital
+            </button>
+            <button onclick="mostrarTab(event, 'tab2')">
+                Vinculación laboral
+            </button>
+            <button onclick="mostrarTab(event, 'tab3')">
+                Mentoría y seguimiento
+            </button>
+        </div>
+
+        <div id="tab1" class="tab-content active">
+            <p>
+                Conecta Talento capacita a personas en situación de vulnerabilidad
+                en habilidades técnicas y digitales alineadas con las demandas
+                actuales del mercado laboral.
+            </p>
+        </div>
+
+        <div id="tab2" class="tab-content">
+            <p>
+                El programa vincula directamente a los participantes con empresas
+                que requieren talento capacitado, promoviendo la inclusión laboral
+                y el acceso a oportunidades reales de empleo.
+            </p>
+        </div>
+
+        <div id="tab3" class="tab-content">
+            <p>
+                Se acompaña el proceso de inserción laboral mediante mentoría,
+                seguimiento continuo y orientación profesional para asegurar
+                una integración exitosa al entorno laboral.
+            </p>
+        </div>
     </div>
 </section>
-
-<!-- MODAL 1 -->
-<div id="modal1" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarModal('modal1')">&times;</span>
-        <h3>Capacitación digital</h3>
-        <p>
-            Conecta Talento capacita a personas en situación de vulnerabilidad
-            en habilidades técnicas y digitales alineadas con las demandas
-            actuales del mercado laboral.
-        </p>
-    </div>
-</div>
-
-<!-- MODAL 2 -->
-<div id="modal2" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarModal('modal2')">&times;</span>
-        <h3>Vinculación laboral</h3>
-        <p>
-            El programa vincula directamente a los participantes con empresas
-            que requieren talento capacitado, promoviendo la inclusión laboral
-            y el acceso a oportunidades reales de empleo.
-        </p>
-    </div>
-</div>
-
-<!-- MODAL 3 -->
-<div id="modal3" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarModal('modal3')">&times;</span>
-        <h3>Mentoría y seguimiento</h3>
-        <p>
-            Se acompaña el proceso de inserción laboral mediante mentoría,
-            seguimiento continuo y orientación profesional para asegurar
-            una integración exitosa al entorno laboral.
-        </p>
-    </div>
-</div>
 
 <footer>
     <p>Proyecto académico | Diseñar para compartir | UVM</p>
 </footer>
 
 <script>
-function abrirModal(id) {
-    document.getElementById(id).style.display = "block";
-}
+function mostrarTab(event, tabId) {
+    const contenidos = document.querySelectorAll('.tab-content');
+    const botones = document.querySelectorAll('.tab-buttons button');
 
-function cerrarModal(id) {
-    document.getElementById(id).style.display = "none";
+    contenidos.forEach(tab => tab.classList.remove('active'));
+    botones.forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
 }
 </script>
 
