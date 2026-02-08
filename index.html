@@ -124,11 +124,15 @@
 <section>
     <h2>¿Qué es Conecta Talento?</h2>
 
-    <p><strong>Conecta Talento ofrece una solución innovadora al:</strong></p>
+    <p><strong>Conecta Talento ofrece una solución innovadora</strong></p>
 
+    
     <div class="tabs">
         <div class="tab-buttons">
-            <button class="active" onclick="mostrarTab(event, 'tab1')">
+             <button class="active" onclick="mostrarTab(event, 'tab')">
+                ¿Quienes somos?
+            </button>
+            <button onclick="mostrarTab(event, 'tab1')">
                 Capacitación digital
             </button>
             <button onclick="mostrarTab(event, 'tab2')">
@@ -138,8 +142,17 @@
                 Mentoría y seguimiento
             </button>
         </div>
+        <div id="tab" class="tab-content active">
+            <p>
+                IncluWeb Educativo es un sitio diseñado bajo los principios de accesibilidad de la metodología POUR. 
+                Su interfaz permite que la información sea perceptible mediante texto alternativo, contrastes adecuados y
+                contenido multimedia accesible. La navegación es operable a través de teclado y dispositivos de asistencia.
+                El contenido es comprensible gracias a un lenguaje claro y estructura coherente. 
+                Finalmente, el sitio es robusto, compatible con distintos navegadores y tecnologías de apoyo.
 
-        <div id="tab1" class="tab-content active">
+            </p>
+        </div>
+        <div id="tab1" class="tab-content">
             <p>
                 Conecta Talento capacita a personas en situación de vulnerabilidad
                 en habilidades técnicas y digitales alineadas con las demandas
@@ -184,6 +197,7 @@ function mostrarTab(event, tabId) {
 
 </body>
 </html>
+
 
 
 
