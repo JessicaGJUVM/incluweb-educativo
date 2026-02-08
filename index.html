@@ -128,7 +128,8 @@
 
     
     <div class="tabs">
-        <div class="tab-buttons">
+         <div class="tab-buttons" id="tabButtons">
+
              <button class="active" onclick="mostrarTab(event, 'tab')">
                 ¿Quienes somos?
             </button>
@@ -183,20 +184,40 @@
 </footer>
 
 <script>
+const botones = document.querySelectorAll('#tabButtons button');
+let indiceActual = 0;
+
 function mostrarTab(event, tabId) {
     const contenidos = document.querySelectorAll('.tab-content');
-    const botones = document.querySelectorAll('.tab-buttons button');
 
     contenidos.forEach(tab => tab.classList.remove('active'));
     botones.forEach(btn => btn.classList.remove('active'));
 
     document.getElementById(tabId).classList.add('active');
     event.currentTarget.classList.add('active');
+
+    indiceActual = Array.from(botones).indexOf(event.currentTarget);
 }
+
+/* NAVEGACIÓN CON TECLAS */
+document.addEventListener('keydown', function (e) {
+
+    if (e.key === 'ArrowRight') {
+        indiceActual = (indiceActual + 1) % botones.length;
+        botones[indiceActual].click();
+    }
+
+    if (e.key === 'ArrowLeft') {
+        indiceActual = (indiceActual - 1 + botones.length) % botones.length;
+        botones[indiceActual].click();
+    }
+});
 </script>
+
 
 </body>
 </html>
+
 
 
 
